@@ -41,7 +41,7 @@ def validate_csv_format(file_path):
             
             missing_columns = EXPECTED_COLUMNS - headers
             if missing_columns:
-                return False, f"Missing mandatory columns: {', '.join(missing_columns)}"
+                return (False, f"Missing mandatory columns: {', '.join(missing_columns)}")
             
             return True, None
     except Exception as e:
@@ -174,4 +174,4 @@ def filter_data():
     return jsonify(filtered_data) if filtered_data else jsonify({'message': 'No records found'})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8888, debug=True)
