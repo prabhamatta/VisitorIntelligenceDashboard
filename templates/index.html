@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Insights</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> Visitor Intelligence Dashboard</h1>
+            <div id="filter-container">
+                <div id="filter-container">
+                <h2> Upload Web Log File in CSV format</h2>
+                <div>
+                <input type="file" id="fileInput" accept=".csv">
+                <button id="uploadBtn">Upload & Analyze</button>
+                </div>
+                    <p> Note: Make sure to upload a CSV file.
+                        The file should contain alteast the following information: User Agent, Domain, Page Url, Referral URL</p>
+                    <p> please see the <a href="https://github.com/prabhamatta/VisitorIntelligenceDashboard" target="_blank"> Github repo </a> for the sample file format</p>
+                </div>  
+                <div id="filter-container">
+                <h2>Filter Visitor Data</h2>
+
+                <div>
+                    <label for="browser">Browser:</label>
+                    <select id="browser" class="filter-input"></select>
+                    
+                    <label for="os">OS:</label>
+                    <select id="os" class="filter-input"></select>
+                    
+                    <label for="device">Device:</label>
+                    <select id="device"></select>
+
+                    <label for="domain">Domain:</label>
+                    <select id="domain"></select>
+                </div>
+                <div>  
+                    <label for="page" class="fixed-label">Page:</label>
+                    <select id="page" class="fixed-dropdown"></select>
+                </div>
+                <div>
+                    <label for="referral" class="fixed-label">Visitors from URL:</label>
+                    <select id="referral" class="fixed-dropdown"></select>
+                </div>
+                <div>
+                    <button id="filterBtn">Apply Filters</button>
+                </div>  
+                
+                </div>
+            </div>
+            <div id="results-container">
+                <h2>Results</h2>
+                <div id="results">
+                    <pre id="data-table"></pre>
+                </div>
+            </div> 
+       
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
